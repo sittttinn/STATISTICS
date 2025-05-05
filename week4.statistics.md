@@ -83,7 +83,8 @@
     - 각 데이터 샘플을 1000개씩 뽑아서 엑셀에 붙여 놓고 변수와 설명 리스트와 함께 눈으로 쭉 살펴보기
     - 실제로 해보면 도움이 된다 (ex: 성비, 가격대 형성, 판매와 도매 가격 차이…)
 
-![image.png](attachment:edd19d4f-df95-446e-9d4e-f0d07650da9b:image.png)
+![image](https://github.com/user-attachments/assets/e932578d-b131-4c3d-849a-62de453b4533)
+
 
 - 김종혁 고객: 판매가격<도매가격
     - 데이터가 잘못 입력되었거나, 생각하지 못했던 할인과 같은 데이터 입력 프로세스 예상 가능
@@ -97,7 +98,7 @@
 df.head()
 ```
 
-![image.png](attachment:5b8e0edb-6cc4-4db9-a6b4-c78058ba9761:image.png)
+![image](https://github.com/user-attachments/assets/770da2ce-bbe5-449a-9777-040a373d74c7)
 
 - 데이터가 제대로 로드되었는지 확인
 
@@ -105,7 +106,7 @@ df.head()
 df.info()
 ```
 
-![image.png](attachment:6caf313c-dc80-45ea-b3ef-a78767f1f129:image.png)
+![image](https://github.com/user-attachments/assets/fc94facf-266a-4b03-bda9-10ba4f9e11af)
 
 - 데이터에 대한 전반적인 정보
 - 행과 열의 크기와 각 칼럼을 구성하는 값의 자료형 등을 확인
@@ -118,13 +119,14 @@ df.info()
 df.describe()
 ```
 
-![image.png](attachment:e6921c4f-6b8b-421e-91dd-5a8ac7847998:image.png)
+![image](https://github.com/user-attachments/assets/0d6cf468-af95-48b1-ab67-63b913864f4e)
 
 - 평균, 표준편차, 최대 최솟값 등을 한 번에 확인할 수 있다.
 - arrival_date_year와 같이 숫자형이지만 문자형과 다름 없는 칼럼은 이러한 통계치가 큰 의미가 없다.
     - 각 빈도 등을 확인하는 방식으로 분석!
 
-![image.png](attachment:c9efe1f6-564b-4a07-b3bf-0020d556b4a6:image.png)
+![image](https://github.com/user-attachments/assets/55be443a-51d9-4c60-9650-8db7a5e17822)
+
 
 - 왜도와 첨도 확인
 - 정규성이 필요한 경우 로그변환, 정규화, 표준화 등의 방법을 사용
@@ -133,7 +135,7 @@ df.describe()
 df.kurtosis()
 ```
 
-![image.png](attachment:06ec7d96-1904-43ec-81b8-e04a9b008dd7:image.png)
+![image](https://github.com/user-attachments/assets/da370a20-73f3-4ce6-9542-3673ea61c795)
 
 - 왜도: skew()
 - 첨도: kurtosis
@@ -143,14 +145,15 @@ df.kurtosis()
 sns.distplot(df["lead_time"])
 ```
 
-![image.png](attachment:bddb0f8e-e59e-4d4d-9f98-80a3b6ea6f76:image.png)
+![image](https://github.com/user-attachments/assets/9be6a3a8-7f4b-4d24-97be-401d65f95ec3)
+
 
 - 칼럼의 분포를 시각화
 - lead_time: 예약 날짜로부터 투숙 날짜까지의 일수 차이를 의미
 - 0값이 확연히 많은 것 ⇒ 당일 체크인 하는 투숙객이 많은 편
     - 당일 예약인지, 시스템상 기록이 제대로 남지 않은 예약을 일괄적으로 0이라고 한 것인지 검토 필요
 
-![image.png](attachment:faa9ab84-816d-46f3-a839-2d854f59a8fc:image.png)
+![image](https://github.com/user-attachments/assets/776b3567-9f0c-4256-99dc-626481285eeb)
 
 - 호텔 구분에 따라 투숙객의 리드타이이 어떻게 다른지 시각화
 - resort 호텔은 리드타임의 최댓값이 city호텔보다 높지만, 대체적으로 더 작은 값에 분포함
@@ -161,7 +164,8 @@ sns.distplot(df["lead_time"])
 - 타깃 변수 Y와 입력 변수 X와의 관계, X들 간의 관계
 - 다중 공선성 방지
 
-![image.png](attachment:e4920759-7e01-4d9f-8da6-e8ee81cb50a0:image.png)
+![image](https://github.com/user-attachments/assets/86d6e69b-6c9d-4218-83a2-301589352e70)
+
 
 ### **10.2.1 공분산**
 
@@ -172,16 +176,18 @@ sns.distplot(df["lead_time"])
     - 양수: 양의 상관관계
     - 음수: 음의 상관관계
 
-![image.png](attachment:d7a6a5c2-6686-4546-900f-81d553696edd:image.png)
+![image](https://github.com/user-attachments/assets/6f799136-b316-480f-ac7d-11faa75160a4)
 
 **🎯예시**
 
-![image.png](attachment:b80c1a21-8e72-4e95-bed6-a61b65f5491d:image.png)
+![image](https://github.com/user-attachments/assets/1de5bd55-aae8-4a7a-9c9e-278e5c46f102)
+
 
 - 웹사이트 접속 시간 편차: -24, 11, -4, 26, -9
 - 각 고객의 구매 비용 편차: -29, 9, -8, 44, -16
 
-![image.png](attachment:7a19134d-a8b8-4304-8606-071d86204a10:image.png)
+![image](https://github.com/user-attachments/assets/ea8d0a1b-86cf-4d7f-9257-ab9660697bbd)
+
 
 ### **10.2.2 상관계수**
 
@@ -194,13 +200,14 @@ sns.distplot(df["lead_time"])
 
 **피어슨 상관계수**
 
-![image.png](attachment:bf41b078-966f-414e-954b-c392d4a5065e:image.png)
+![image](https://github.com/user-attachments/assets/eef9504c-e7c4-46c6-8b4f-b582999af717)
+
 
 - -1<R<1
 
-![image.png](attachment:f8bb1ee1-9e84-419e-995f-0c109d2d50dc:image.png)
+![image](https://github.com/user-attachments/assets/046fd1eb-859f-4fb8-a421-cd8766a4e244)
+![image](https://github.com/user-attachments/assets/2ed48f8e-6654-42b5-b358-14c991086b41)
 
-![image.png](attachment:d8047162-1d5f-4db9-a128-70e58d216f23:image.png)
 
 - 산점도의 기울기와 상관계수는 관련이 없다
     - 분산의 관계성이 같다면 기울기가 크든 작든 상관계수는 같다 !!
@@ -210,9 +217,8 @@ sns.distplot(df["lead_time"])
     - 상관계수가 0이 나오더라도 다른 통계적 관계나 패턴이 숨겨져 있을 수 있으니까 이것만 확인하면 안됨~~
     - 산점도도 같이 그려서 확인해보기
 
-![image.png](attachment:fc34a5a1-0835-4ba2-9883-7e5c584b0387:image.png)
-
-![image.png](attachment:54f8f78d-da09-4ec8-8636-037f04a38e9d:image.png)
+![image](https://github.com/user-attachments/assets/be2e8145-6c0a-4701-a534-8e091c13a185)
+![image](https://github.com/user-attachments/assets/f7d73f67-62c3-4d0e-853d-654c3ca49bd6)
 
 ### **10.2.3 공분산과 상관성 분석 실습**
 
@@ -227,7 +233,8 @@ plt.show()
 
 - 상관성을 확인할 수 있음
 
-![image.png](attachment:5ebe3c34-c5be-489c-9d82-02dbed576514:image.png)
+![image](https://github.com/user-attachments/assets/f78d077c-6a09-4083-928d-5f469cd09447)
+
 
 ```python
 df.cov()
@@ -237,7 +244,8 @@ df.cov()
 
 → but, 공분산으로 변수 간 상관성을 분석하기에 가독성이 떨어짐
 
-![image.png](attachment:7b810bae-d154-47dd-9b53-f2218102f80c:image.png)
+![image](https://github.com/user-attachments/assets/f5d861f0-2793-4a04-aba0-e20df0af2e0f)
+
 
 ```python
 df.corr(method="person")
@@ -247,13 +255,13 @@ df.corr(method="person")
 - 알아서 문자형 변수 제외
 - 고유번호같이 숫자형이지만 의미가 없는 경우에는 drop()함수로 제거해주기
 
-![image.png](attachment:45cfb2d1-d92c-4bd1-8d90-4347a6439689:image.png)
+![image](https://github.com/user-attachments/assets/374aa20d-7451-4b3f-b42d-6bf50c6de5d2)
 
 ```python
 sns.heatmap(df.corr(),cmap="viridis")
 ```
 
-![image.png](attachment:a5c96833-721e-4578-b4a1-46259bdbee5c:image.png)
+![image](https://github.com/user-attachments/assets/45cdb031-1b14-40a2-bc62-703a8f09ab02)
 
 - 노란색 - 양의 상관관계
 - 보라색 - 음의 상관관계
@@ -265,9 +273,10 @@ sns.clustermap(df.,corr(),
 	vmin=-1, vmax=1,)
 ```
 
-![image.png](attachment:a3a06a11-e126-4e1d-86c8-733d742b1371:image.png)
+![image](https://github.com/user-attachments/assets/f66faa0c-2460-46b1-bacc-553a6aa7043e)
 
-![image.png](attachment:a8ff786d-da46-4523-8e84-5af47ad79868:image.png)
+![image](https://github.com/user-attachments/assets/fb637230-67a8-4630-8134-a3f1b61151b7)
+
 
 - 중복 제거 히트맵 시각화
 - 매트릭스의 우측 상단을 모두 true인 1로, 하단을 false인 0으로 변환하였다
@@ -284,7 +293,9 @@ sns.clustermap(df.,corr(),
 - 추체선을 그리는 방법 : 이동평균(moving average)
     - 연속적 그룹의 평균 구하기
     
-    ![image.png](attachment:f74f1b94-2265-4c1a-a0e1-c3e09594718a:image.png)
+   ![image](https://github.com/user-attachments/assets/67696b23-486c-4f37-819b-de5aad1851c4)
+
+
     
 - 분절형 시간 시각화
     - 막대 그래프, 누적 막대 그래프, 점 그래프
@@ -292,7 +303,9 @@ sns.clustermap(df.,corr(),
     - 값들의 상대적 차이를 나타내는 것에 유리
     - 누적 막대 그래프 - 한 시점에 2개 이상의 세부 항목이 존재할 때 사용
 
-![image.png](attachment:4118a79d-144b-4fcb-9d7f-75ce38e585ad:image.png)
+![image](https://github.com/user-attachments/assets/d8eb9863-8a48-4210-9c4a-68b2fc03aa68)
+
+
 
 ### 10.3.1 시간 시각화 실습
 
@@ -308,7 +321,7 @@ df_line=df_line.groupby('Date2')['Sales'].sum().reset_index()
 df.line.head()
 ```
 
-![image.png](attachment:cf568efb-1307-4bfe-970e-0a6275e0e3c5:image.png)
+![image](https://github.com/user-attachments/assets/82601852-9136-47de-8b02-506431aee293)
 
 - date 칼럼 날짜 형식 변환 → 날짜 오름차순 정렬 → 연도 칼럼 생성
 - 선그래프용 데이터셋을 생성한 뒤, 2018 데이터만 필터링 → 일별 매출액 가공
@@ -320,7 +333,8 @@ ax=df_line.plot(x='Date2', y='Sales',linewidth='0.5')
 df_line.plot(x='Date2', y='Month',color='#FF7F50',linewidth='1', ax=ax)
 ```
 
-![image.png](attachment:1584c086-b16a-49e6-8ccc-493c6bedbf16:image.png)
+![image](https://github.com/user-attachments/assets/a3c96b98-44be-4f80-b9a1-7b9fd75057c9)
+
 
 - 30일 이동평균 생성 → 선 그래프로 시각화
 - rolling 함수를 통해 month 칼럼 새로 만들기 → plot 함수로 선그래프 생성
@@ -331,7 +345,8 @@ df_bar_1=df.groupby('Year')['Sales'].sum().reset_index()
 df_bar_1.head()
 ```
 
-![image.png](attachment:5e135dc8-5031-4e7f-8b50-12ad256f4a00:image.png)
+![image](https://github.com/user-attachments/assets/1db8fffe-bc81-4b2e-9eae-cfacbee7f741)
+
 
 - year 칼럼으로 groupby()를 하여 연도별 매출액 합계를 만듦 → 2015년부터 2018년까지의 행이 생성
 
@@ -339,7 +354,8 @@ df_bar_1.head()
 ax=df_bar_1.plot.bar(x='Year', y='Sales', rot=0, figsize=(10,5))
 ```
 
-![image.png](attachment:4b042e4c-f6f7-4bda-9366-fabfc287b104:image.png)
+![image](https://github.com/user-attachments/assets/0dcf1f33-01ef-4334-adce-01c65df41d84)
+
 
 ```python
 df_bar_2=df.groupby(['Year','Segment'])['Sales'].sum().reset_index()
@@ -349,7 +365,8 @@ df_bar_2_pv=df_bar_2.pivot(index='Year', columns='Segment', values='Sales').rese
 df_bar_2_pv.head()
 ```
 
-![image.png](attachment:d229ba9f-628b-4e28-98bc-b8a39c37fbef:image.png)
+![image](https://github.com/user-attachments/assets/49e07c59-6871-40b5-a2de-e48409bcd8da)
+
 
 - 연도별, 고객 세그먼트별 그룹지어서 합계 계산
     - 세그먼트 칼럼을 활용하여 consumer, corporate, home office 구분에 따라 매출액 집계
@@ -359,7 +376,8 @@ df_bar_2_pv.head()
 df_bar_2_pv.plot.bar(x='Year', stacked=True, figsize=(10,7))
 ```
 
-![image.png](attachment:46f553df-2e3d-4a12-9d4a-719b355ac04f:image.png)
+![image](https://github.com/user-attachments/assets/57bba985-c27d-43bc-9630-e06c52871fcc)
+
 
 ## 10.4 비교 시각화
 
@@ -367,11 +385,13 @@ df_bar_2_pv.plot.bar(x='Year', stacked=True, figsize=(10,7))
     - 현재 가지고 있는 데이터의 구조와 자신이 확인하고자 하는 목적을 정확히 파악한 다음 차트를 그려야한다.
 - 방사형 차트
     
-    ![image.png](attachment:5f434733-aec8-4b6c-9b3b-b4f4d8a79d6d:image.png)
+    ![image](https://github.com/user-attachments/assets/d7d9c781-5521-4651-ac49-8380930bd646)
+
     
 - 평행 좌표 그래프
     
-    ![image.png](attachment:dada1d90-a717-4862-b5ed-025762d3c8cf:image.png)
+   ![image](https://github.com/user-attachments/assets/c6810ac8-5ca0-4faf-bb08-6bcf0251746b)
+
     
     - 효과적이기 위해서 변수별 값을 정규화하면 됨
 
@@ -386,7 +406,7 @@ df1=df1.groupby('Tm').mean()
 df1.head()
 ```
 
-![image.png](attachment:18f18f87-744b-453c-b922-d1b6a114be59:image.png)
+![image](https://github.com/user-attachments/assets/ca635ece-a910-4fd2-b316-d527ac982d14)
 
 ```python
 fig=plt.figure(figsize=(8,8))
@@ -402,7 +422,8 @@ plt.show()
 ax=fig.add_subplot(111, polar=True)
 ```
 
-![image.png](attachment:cb41f096-7f94-4d4c-a189-0731bdb1e590:image.png)
+![image](https://github.com/user-attachments/assets/c7fe8314-31ce-4e39-b6b3-f2c8e3d3fc3c)
+
 
 - BRK의 어시스트 비율이 다른 팀에 비해 높음
 
@@ -417,7 +438,8 @@ df2=df2.pivot(index='Tm', columns='Age', values='G')
 df2.head()
 ```
 
-![image.png](attachment:36b61b8d-95f3-4ddf-910f-9f755e619d3f:image.png)
+![image](https://github.com/user-attachments/assets/2b7d4f27-1d2d-47b9-aef4-a5e1e52e918a)
+
 
 ```python
 fig=plt.figure(figsize=(8,8))
@@ -434,14 +456,16 @@ plt.show()
 
 - BRK팀이 34세 선수의 게임참여 횟수가 약 30회 정도로 확연히 높다
 
-![image.png](attachment:7b0afb06-9f53-4b9d-ac67-e7569ce26a5d:image.png)
+![image](https://github.com/user-attachments/assets/17af3d69-da06-4f34-9bf8-e32a8b265e49)
+
 
 ```python
 df3=df1.reset_index()
 df3.head()
 ```
 
-![image.png](attachment:14d72bc8-9ab0-452f-8656-992bb3898240:image.png)
+![image](https://github.com/user-attachments/assets/cd856d32-205f-4764-9bb5-47013a3a1e94)
+
 
 ```python
 labels=df3.columns[1:]
@@ -477,7 +501,8 @@ plt.tight_layout(pad=3)
 plt.show()
 ```
 
-![image.png](attachment:d72cd92d-a5eb-474a-89df-36b18b4a709c:image.png)
+![image](https://github.com/user-attachments/assets/a384b1a0-39f0-49be-b4a7-8dcc6f94a884)
+
 
 - 깨짐..(사이즈가 안맞는듯)
 
@@ -525,7 +550,8 @@ plt.figure(figsize=(16,8))
 parallel_coordinates(df3,'Tm', ax=axes, colormap='winter',linewidth="0.5")
 ```
 
-![image.png](attachment:49bf55bb-f53a-4cc8-9b55-68c3acae7ca6:image.png)
+![image](https://github.com/user-attachments/assets/c2755202-6716-4d5d-804f-cbf9eb321485)
+
 
 ## 10.4 분포 시각화
 
@@ -545,7 +571,7 @@ plt.legend()
 plt.show()
 ```
 
-![image.png](attachment:b206053c-170a-44fc-bec8-a04ab135801b:image.png)
+![image](https://github.com/user-attachments/assets/455171fe-6cb9-416e-ad3a-45ba9ee0a914)
 
 ```python
 df1_1=df[df['sex'].isin(['man'])]
@@ -559,7 +585,8 @@ plt.legend()
 plt.show()
 ```
 
-![image.png](attachment:6981fc4e-7d24-4e34-b291-316dcbbc4dcb:image.png)
+![image](https://github.com/user-attachments/assets/cb63c321-8fac-4702-afab-da821efa9cc2)
+
 
 ```python
 df2=df[['country','height_cm']]
@@ -568,7 +595,8 @@ df2=df2.groupby('country').count().reset_index()
 df2.head(10)
 ```
 
-![image.png](attachment:f937a3ec-7ee5-4545-9d58-3d481aef63b1:image.png)
+![image](https://github.com/user-attachments/assets/39e3b15f-2f76-4973-83dc-81ae188704f6)
+
 
 ```python
 fig = plt.figure(figsize=(8,8))
@@ -586,7 +614,7 @@ plt.legend()
 plt.show()
 ```
 
-![image.png](attachment:292b713a-fb6c-4423-bcb1-6ca89056f0b7:image.png)
+![image](https://github.com/user-attachments/assets/1e5f63b9-ef15-4d6b-8c50-c35735968dc4)
 
 ```python
 wedgeprops={'width': 0.7, 'edgecolor': 'w', 'linewidth': 5}
@@ -596,7 +624,8 @@ plt.pie(df2.height_cm, labels=df2.country, autopct='%.1f%%',
 plt.show()
 ```
 
-![image.png](attachment:849c6f07-5271-4997-9397-195778af1222:image.png)
+![image](https://github.com/user-attachments/assets/c446b38b-ae64-4c39-b060-19e1216cadd3)
+
 
 ```python
 df3 = df[['country', 'sex', 'height_cm']]
@@ -607,7 +636,8 @@ df3 = df3.groupby(['country','sex']).count().reset_index()
 df3.head(10)
 ```
 
-![image.png](attachment:734c1d42-ddc1-4bcf-87b3-06541bc551e8:image.png)
+![image](https://github.com/user-attachments/assets/fef13a18-051a-4365-bd4c-c24390268209)
+
 
 ```python
 fig = px.treemap(df3,
@@ -619,7 +649,8 @@ fig = px.treemap(df3,
 fig.show()
 ```
 
-![image.png](attachment:aec7210d-c219-45f6-9a69-ef60c6ac3154:image.png)
+![image](https://github.com/user-attachments/assets/19e10760-f500-4922-a886-30453a890477)
+
 
 ```python
 fig = plt.figure(
@@ -637,7 +668,8 @@ fig = plt.figure(
 )
 ```
 
-![image.png](attachment:14f54472-5acc-410c-8a4c-76953a7eb8bf:image.png)
+![image](https://github.com/user-attachments/assets/2ae8b670-b4ad-4e40-bed7-99b783ff3160)
+
 
 ## 10.6 관계 시각화
 
@@ -654,13 +686,15 @@ plt.scatter(df['R&D Spend'], df['Profit'], s=50, alpha=0.4)
 plt.show()
 ```
 
-![image.png](attachment:61b22d1d-ec23-4f60-a075-d26da5441e17:image.png)
+![image](https://github.com/user-attachments/assets/ea09c524-b8a7-4093-9fb7-bcc0d15668bd)
+
 
 ```python
 ax=sns.lmplot(x='R&D Spend', y='Profit', data=df)
 ```
 
-![image.png](attachment:65646008-0d90-4245-8b94-b913bd86fcdc:image.png)
+![image](https://github.com/user-attachments/assets/4edf8740-6d31-4ff8-b4c7-418b303916f6)
+
 
 ```python
 plt.scatter(df['R&D Spend'], df['Profit'], s=df['Marketing Spend']*0.001, 
@@ -669,7 +703,8 @@ plt.colorbar()
 plt.show()
 ```
 
-![image.png](attachment:f60df3f5-3640-48a3-97d6-5fa3673e006c:image.png)
+![image](https://github.com/user-attachments/assets/f680dfb9-1e37-4de5-8649-889f89046e84)
+
 
 ## 10.7 공간 시각화
 
@@ -692,7 +727,8 @@ m = folium.Map(location=[37.541, 126.986], zoom_start=12)
 m
 ```
 
-![image.png](attachment:1c32bd84-d313-4ac2-bfb0-446c291fbffd:image.png)
+![image](https://github.com/user-attachments/assets/56e2fc9f-a996-4c45-833e-021e386126d4)
+
 
 ```python
 m = folium.Map(location=[37.541, 126.986],tiles='Stamen Toner',zoom_start=12)
@@ -706,8 +742,7 @@ folium.Marker([37.5538, 126.9810], popup='The Waterfront').add_to(m)
 m
 ```
 
-![image.png](attachment:406f5227-0a66-40b5-add6-327a7b6fae5a:image.png)
-
+![image](https://github.com/user-attachments/assets/1b5beaf8-f89b-4a0b-8f00-f0804cf39725)
 - 안됨 ㅠㅠ
 
 ```python
@@ -719,7 +754,7 @@ m.add_child(cluster)
 m
 ```
 
-![image.png](attachment:1f06af71-206a-4e13-92c0-fe93107b34c1:image.png)
+![image](https://github.com/user-attachments/assets/92b58076-267f-4f14-b170-ea552c4eb65d)
 
 ```python
 df_m = df.groupby('gu_name').agg({'latitude':'mean',
@@ -728,7 +763,8 @@ df_m = df.groupby('gu_name').agg({'latitude':'mean',
 df_m.head()
 ```
 
-![image.png](attachment:c173a1c3-9edb-4961-8861-d3bd0e4f133c:image.png)
+![image](https://github.com/user-attachments/assets/6ade8d2f-9dd1-424a-8243-13c810fe1cb4)
+
 
 ```python
 m = folium.Map(location=[37.541, 126.986], tiles='Cartodb Positron', 
@@ -750,7 +786,7 @@ for i in range(len(locations)):
 m
 ```
 
-![image.png](attachment:39542d23-c327-4dea-a0da-d71f1781d3f4:image.png)
+![image](https://github.com/user-attachments/assets/ea0e4301-8cf4-4ab3-b046-5b2dd2f0b700)
 
 ```python
 import json
@@ -770,7 +806,8 @@ m.add_child(cluster)
 m
 ```
 
-![image.png](attachment:9272a31e-f593-4ea8-a675-3da98b731005:image.png)
+![image](https://github.com/user-attachments/assets/69e0c250-5fae-4fcf-8031-391838aec46c)
+
 
 ```python
 m = folium.Map(location=[37.541, 126.986], zoom_start=12, width="100%", height="100%")
@@ -780,7 +817,7 @@ for i in range(len(locations)):
 m
 ```
 
-![image.png](attachment:e73ccaaf-799e-4d85-82aa-a81ee3360b13:image.png)
+![image](https://github.com/user-attachments/assets/fcb9e80d-e2e1-423b-bd6f-6356bd564708)
 
 ```python
 df_m = df.groupby('gu_name').agg({'latitude':'mean',
@@ -789,7 +826,8 @@ df_m = df.groupby('gu_name').agg({'latitude':'mean',
 df_m.head()
 ```
 
-![image.png](attachment:6cd50cb9-fb63-4a38-b0b8-60b87804b246:image.png)
+![image](https://github.com/user-attachments/assets/ea6a72fc-ee0f-4a83-8646-c240d8a5ac47)
+
 
 ```python
 m = folium.Map(location=[37.541, 126.986], tiles='Cartodb Positron', 
@@ -811,7 +849,7 @@ for i in range(len(locations)):
 m
 ```
 
-![image.png](attachment:1c7d8d0c-9b49-466f-b0d9-a82c85e17463:image.png)
+![image](https://github.com/user-attachments/assets/326294f8-1e15-491a-b89d-640a0615826f)
 
 ```python
 source_to_dest = zip([37.541,37.541,37.541,37.541,37.541], 
@@ -840,7 +878,7 @@ fig.update_layout(
 fig.show()
 ```
 
-![image.png](attachment:5bfa0b1c-43f1-421a-8fa0-16559a22a656:image.png)
+![image](https://github.com/user-attachments/assets/c3ea8db9-694a-44a8-90b9-28f907a17d1b)
 
 ## 10.8 박스플롯
 
@@ -853,9 +891,10 @@ fig.show()
     - 제3사분위
     - 최댓값
 
-![image.png](attachment:f1359a7a-e68c-49e2-ac85-e216f019f4fb:image.png)
+![image](https://github.com/user-attachments/assets/77f9bce0-80fe-47d6-96d0-67459c0740db)
 
-![image.png](attachment:ef8a2f20-9360-4d35-ace4-02a3c5d461cf:image.png)
+![image](https://github.com/user-attachments/assets/2b52336f-3b68-4b3b-95d4-2d0e2c1bc574)
+
 
 - 항상 데이터 분포도를 함께 떠올리는 습관이 필요함!!
 
@@ -871,9 +910,9 @@ sns.boxplot(x = 'Profit', data = df)
 plt.show()
 ```
 
-![image.png](attachment:1e630b48-1f83-4263-82a6-a8b2c49fce67:image.png)
+![image](https://github.com/user-attachments/assets/e68dd404-20f6-4806-9cc8-90e096199a55)
+![image](https://github.com/user-attachments/assets/ff6baec3-c5ca-4e20-ad27-3aa716f03641)
 
-![image.png](attachment:03a16c8b-30d3-4372-90fc-1d0a7effffff:image.png)
 
 ```python
 plt.figure(figsize=(8,5))
@@ -881,7 +920,7 @@ sns.boxplot(x="State", y="Profit", data=df)
 plt.show()
 ```
 
-![image.png](attachment:b660acf1-d710-488b-842a-2c3776acc21c:image.png)
+![image](https://github.com/user-attachments/assets/cbeb334b-1323-4b80-b046-123b3606d893)
 
 ```python
 sns.boxplot(x="State", y="Profit", 
@@ -899,7 +938,8 @@ sns.stripplot(x='State', y='Profit',
 plt.show()
 ```
 
-![image.png](attachment:add56350-f436-4ec7-babf-640530d97f67:image.png)
+![image](https://github.com/user-attachments/assets/5099d596-b296-4399-897f-8e9520bc0078)
+
 
 # 확인 문제
 
