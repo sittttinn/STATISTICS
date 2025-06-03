@@ -223,6 +223,8 @@ y_train_re.columns = y_temp_name
 
 X_train_re.head()
 ```
+![image](https://github.com/user-attachments/assets/1cad5cec-710d-4cc3-967e-168217f6453e)
+
 
 ```
 X_train_under, y_train_under = RandomUnderSampler(
@@ -237,6 +239,7 @@ print('RandomUnderSampler 적용 전 레이블 값 분포: \n'
 print('RandomUnderSampler 적용 후 레이블 값 분포: \n'
       , pd.Series(y_train_under['y1']).value_counts())
 ```
+![image](https://github.com/user-attachments/assets/756c2160-0c0f-46e5-a032-11a5d2880ba8)
 
 ```
 X_train_under.columns = list(X_train)
@@ -244,6 +247,7 @@ y_train_under.columns = list(y_train)
 
 X_train_under.head()
 ```
+![image](https://github.com/user-attachments/assets/37c8e40b-f64c-4400-82e0-1d6698453dbf)
 
 ```
 model = LogisticRegression()
@@ -251,14 +255,19 @@ model.fit(X_train_under, y_train_under)
 
 print('학습셋 모델 정확도:', model.score(X_train_under, y_train_under))
 ```
+![image](https://github.com/user-attachments/assets/fbb46eab-132f-4382-b5c8-be008eeb3bf6)
+
 
 ```
 print('테스트셋 모델 정확도:', model.score(X_test, y_test))
 ```
+![image](https://github.com/user-attachments/assets/53cd923c-2426-469a-b018-cd7529e8d8f2)
 
 ```
 print(model.coef_)
 ```
+![image](https://github.com/user-attachments/assets/9c571754-ff25-4f89-95f7-28746aedf27c)
+
 
 ```
 model2 = sm.Logit(y_train_under, X_train_under)
@@ -266,6 +275,9 @@ results = model2.fit(method = "newton")
 
 results.summary()
 ```
+![image](https://github.com/user-attachments/assets/a7ed62cd-8d19-447e-9aa4-0e66b98d7c6d)
+![image](https://github.com/user-attachments/assets/396f9c51-4df3-47c3-b2e7-4f0706071b21)
+
 
 ```
 np.exp(results.params)
